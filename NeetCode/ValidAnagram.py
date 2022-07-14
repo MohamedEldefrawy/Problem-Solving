@@ -1,29 +1,20 @@
 def solve():
-    s = "a"
-    t = "ab"
+    s = "anagram"
+    t = "nagaram"
     if len(s) != len(t):
         return False
 
     first_string_map = dict()
     second_string_map = dict()
-    for char in s:
-        if char not in first_string_map.keys():
-            first_string_map[char] = 1
-        else:
-            first_string_map[char] += 1
 
-    for char in t:
-        if char not in second_string_map.keys():
-            second_string_map[char] = 1
-        else:
-            second_string_map[char] += 1
+    for i in range(len(s)):
+        first_string_map[s[i]] = 1 + first_string_map.get(s[i], 0)
+        second_string_map[t[i]] = 1 + second_string_map.get(t[i], 0)
 
     for key in first_string_map.keys():
-        try:
-            if first_string_map[key] != second_string_map[key]:
-                return False
-        except KeyError:
+        if first_string_map.get(key, 0) != second_string_map.get(key, 0):
             return False
+
     return True
 
 
