@@ -13,11 +13,3 @@ def solve():
     root.right = 2
     root.left = 3
 
-
-def flip(root):
-    if root:
-        temp = root.left
-        root.left = root.right
-        root.right = temp
-        flip(root.right)
-        flip(root.left)
