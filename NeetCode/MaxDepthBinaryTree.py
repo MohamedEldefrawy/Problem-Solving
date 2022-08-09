@@ -17,7 +17,6 @@ def dfs(self, root, depth, depth_set):
         else:
             depth_set.add(depth)
             depth -= 1
-
     else:
         return 0
     return max(depth_set)
