@@ -22,7 +22,6 @@ def solve():
 
     same = False
 
-
     # def isSameTree(p: TreeNode, q: TreeNode) -> bool:
     #     if not p and not q:
     #         return True
