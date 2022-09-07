@@ -17,8 +17,7 @@ class Solution:
 
     def can_attend_meetings(self, intervals: List[Interval]) -> bool:
         intervals.sort(key=lambda i: i.start)
-        i = 0
-        while i < len(intervals) - 1:
+        for i in range(len(intervals) - 1):
             if intervals[i].end > intervals[i + 1].start:
                 return False
             i += 1
